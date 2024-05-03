@@ -1,7 +1,5 @@
 <?php
-
     $hotels = [
-
         [
             'name' => 'Hotel Belvedere',
             'description' => 'Hotel Belvedere Descrizione',
@@ -49,7 +47,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-
     <table class="table">
         <thead>
             <tr>
@@ -63,16 +60,15 @@
             <!-- scorro gli hotel -->
         <?php foreach ($hotels as $hotel) {?>
         <tr>
-            <!-- stampo le informzioni corrette dopo la verifica -->
-            <?php foreach($hotel as $key => $value) { ?>
-                <?php if ($key === "parking"){ ?>
-                    <td><?php echo $value ? "Present" : "None" ?></td>
-                <?php } elseif ($key === "distance_to_center"){ ?>
-                    <td><?php echo $value ?>km</td>
-                <?php } else { ?>
-                    <td><?php echo $value ?></td>
-                <?php } ?>
-            <?php } ?>
+            <!-- stampo le informzioni  -->
+            <td><?= $hotel['name']?></td>
+            <td><?= $hotel['description']?></td>
+            <td><?= $hotel['parking']? 'Si':'No'?></td>
+            <td><?= $hotel['vote']?></td>
+            <td><?= $hotel['distance_to_center']?>km</td>
+
+
+
         </tr>
         <?php } ?>
     </tbody>
